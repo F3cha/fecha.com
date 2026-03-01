@@ -1,0 +1,429 @@
+/*! HTML5 Boilerplate v9.0.1 | MIT License | https://html5boilerplate.com/ */
+
+/* main.css 3.0.0 | MIT License | https://github.com/h5bp/main.css#readme */
+/*
+ * What follows is the result of much research on cross-browser styling.
+ * Credit left inline and big thanks to Nicolas Gallagher, Jonathan Neal,
+ * Kroc Camen, and the H5BP dev community and team.
+ */
+
+/* ==========================================================================
+   Base styles: opinionated defaults
+   ========================================================================== */
+a,
+a:link,
+a:visited {
+  text-decoration: none;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  display: block;
+  flex-direction: column;
+  font-size: 16px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ==========================================================================
+   Navigation Bar Styles
+   ========================================================================== */
+
+/* ==========================================================================
+   Navigation Bar Styles (Corrigido)
+   ========================================================================== */
+
+.navbar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  box-sizing: border-box; /* O segredo está aqui */
+  justify-content: flex-end;
+  padding: 1% 4%;
+  min-height: 10vh;
+  background-color: white;
+  border-bottom: 2px solid #dbdbdb;
+}
+
+.navbar .logo {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1001;
+  display: flex;
+}
+
+.navbar .logo img {
+  height: 60px;
+  width: auto;
+  display: block;
+  transition: transform 0.8s ease;
+}
+
+.navbar .logo:hover img {
+  transform: scale(1.05);
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  padding: 0;
+  margin: 0;
+  z-index: 1000;
+  max-width: 40%;
+}
+
+.nav-links li {
+  position: relative;
+}
+
+.nav-links a {
+  font-family: 'Poppins', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  transition: opacity 0.3s ease, color 0.3s ease;
+}
+
+
+.nav-links:hover a {
+  opacity: 0.3;
+}
+
+.nav-links a:hover {
+  opacity: 1 !important;
+}
+
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  background-color: #000;
+}
+
+.carousel-track {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.0s cubic-bezier(0.2, 1, 0.3, 1);}
+
+.slide {
+  min-width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.6;
+}
+
+.text-overlay {
+  position: absolute;
+  top: 50%;
+  left: 10%;
+  transform: translateY(-50%);
+  color: white;
+  z-index: 2;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  z-index: 3;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {opacity: 0.4}
+  to {opacity: 1}
+}
+
+.footer {
+  background-color: #dadada;
+  color: #000000;
+  padding: 50px 0 20px;
+  margin-top: auto;
+
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 50px auto;
+}
+
+.grid-item {
+  position: relative;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.grid-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.grid-item .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(rgba(120, 121, 122, 0.85), rgba(120, 121, 122, 0.85));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.grid-item h2 {
+  font-size: 1.8rem;
+  margin-top: 0;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+  color: white;
+}
+
+.grid-item p {
+  font-size: 1rem;
+  margin-top: 0;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  line-height: 1.4;
+  color: white;
+  max-width: 90%;
+}
+
+.grid-item h2 {
+  font-size: 1.8rem;
+  margin-bottom: 10px;
+  font-family: sans-serif;
+}
+
+.grid-item p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  font-family: sans-serif;
+  line-height: 1.4;
+}
+
+.btn {
+  background-color: #ffbd33;
+  color: #1a1a1a;
+  text-decoration: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  display: inline-block;
+}
+
+.btn:hover {
+  background-color: #e5a82e;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 20px;
+}
+
+.footer-col h3 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  font-family: 'Poppins', sans-serif;
+}
+.footerlogo {
+  height: 50px;
+  width: auto;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin-bottom: 15px;
+  color: #000000;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-col ul li {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  color: #000000;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.footer-col ul li a:hover {
+  color: #000000;
+  padding-left: 5px;
+}
+
+.social-links a {
+  display: block;
+  color: #000000;
+  text-decoration: none;
+  margin-bottom: 8px;
+  transition: 0.3s;
+}
+
+.social-links a:hover {
+  color: #000000;
+  padding-left: 5px;
+}
+
+/* The Bottom Copyright Bar */
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #ffffff;
+  padding-top: 20px;
+  margin-top: 20px;
+  color: #555;
+  font-size: 14px;
+}
+.about-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.ProfilePic {
+  width: 40vh;
+  height: 40vh;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 0 auto 15px auto;
+  border: 3px solid #5eb5ff;
+
+}
+
+.cv-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 25px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.cv-button:hover {
+  background-color: #0056b3;
+}
+
+
+/* ==========================================================================
+   MOBILE & TABLET STYLES (Responsividade)
+   ========================================================================== */
+
+/* Aplica estas regras apenas em telas menores que 768px (Tablets e Celulares) */
+@media screen and (max-width: 768px) {
+
+  /* 1. Mudar o container principal para coluna */
+  .navbar {
+    flex-direction: column; /* Empilha: Logo em cima, links embaixo */
+    height: auto;           /* Altura se ajusta ao conteúdo */
+    padding: 20px;          /* Reduz o padding lateral para ganhar espaço */
+    justify-content: center;
+    border-bottom: 2px solid #dbdbdb;
+  }
+
+  /* 2. Resetar o Logo (Tirar do Centro Absoluto) */
+  .navbar .logo {
+    position: static;      /* O logo volta a ocupar espaço físico real */
+    transform: none;       /* Remove a centralização matemática antiga */
+    margin-bottom: 20px;   /* Empurra os links para baixo */
+    left: auto;            /* Reseta posição */
+  }
+
+  /* 3. Ajustar os Links para lista vertical */
+  .nav-links {
+    flex-direction: column; /* Links um embaixo do outro */
+    width: 100%;            /* Ocupa a largura toda */
+    align-items: center;    /* Centraliza o texto */
+    gap: 1px;              /* Espaço entre cada link */
+  }
+
+  /* 4. Aumentar a área de toque (Usabilidade Mobile) */
+  .nav-links a {
+    display: block;         /* Torna o link um bloco clicável */
+    padding: 10px 0;        /* Mais fácil de acertar com o dedo */
+    font-size: 16px;        /* Tamanho legível */
+  }
+
+  /* Opcional: Reduzir tamanho do logo no celular */
+  .navbar .logo img {
+    height: 50px;
+  }
+}
